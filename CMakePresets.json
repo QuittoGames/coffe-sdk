@@ -1,0 +1,73 @@
+{
+    "version": 6,
+    "configurePresets": [
+        {
+            "name": "default",
+            "displayName": "GCC (UCRT64)",
+            "description": "Build com GCC MSYS2 UCRT64 (padrão)",
+            "generator": "MinGW Makefiles",
+            "binaryDir": "${sourceDir}/build/gcc",
+            "environment": {
+                "PATH": "C:/msys64/ucrt64/bin;$penv{PATH}",
+                "CC": "C:/msys64/ucrt64/bin/gcc.exe",
+                "CXX": "C:/msys64/ucrt64/bin/g++.exe"
+            },
+            "cacheVariables": {
+                "CMAKE_CXX_COMPILER": "C:/msys64/ucrt64/bin/g++.exe",
+                "CMAKE_C_COMPILER": "C:/msys64/ucrt64/bin/gcc.exe",
+                "CMAKE_BUILD_TYPE": "Debug",
+                "COFFEE_BUILD_TESTS": "OFF"
+            }
+        },
+        {
+            "name": "clang",
+            "displayName": "Clang (LLVM)",
+            "description": "Build com Clang/LLVM 19",
+            "generator": "MinGW Makefiles",
+            "binaryDir": "${sourceDir}/build/clang",
+            "environment": {
+                "PATH": "C:/Program Files/LLVM/bin;C:/msys64/ucrt64/bin;$penv{PATH}",
+                "CC": "C:/Program Files/LLVM/bin/clang.exe",
+                "CXX": "C:/Program Files/LLVM/bin/clang++.exe"
+            },
+            "cacheVariables": {
+                "CMAKE_CXX_COMPILER": "C:/Program Files/LLVM/bin/clang++.exe",
+                "CMAKE_C_COMPILER": "C:/Program Files/LLVM/bin/clang.exe",
+                "CMAKE_BUILD_TYPE": "Debug",
+                "COFFEE_BUILD_TESTS": "OFF"
+            }
+        },
+        {
+            "name": "release",
+            "displayName": "Release (GCC UCRT64)",
+            "description": "Build release com otimizações",
+            "generator": "MinGW Makefiles",
+            "binaryDir": "${sourceDir}/build/release",
+            "environment": {
+                "PATH": "C:/msys64/ucrt64/bin;$penv{PATH}",
+                "CC": "C:/msys64/ucrt64/bin/gcc.exe",
+                "CXX": "C:/msys64/ucrt64/bin/g++.exe"
+            },
+            "cacheVariables": {
+                "CMAKE_CXX_COMPILER": "C:/msys64/ucrt64/bin/g++.exe",
+                "CMAKE_C_COMPILER": "C:/msys64/ucrt64/bin/gcc.exe",
+                "CMAKE_BUILD_TYPE": "Release",
+                "COFFEE_BUILD_TESTS": "OFF"
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "default",
+            "configurePreset": "default"
+        },
+        {
+            "name": "clang",
+            "configurePreset": "clang"
+        },
+        {
+            "name": "release",
+            "configurePreset": "release"
+        }
+    ]
+}
