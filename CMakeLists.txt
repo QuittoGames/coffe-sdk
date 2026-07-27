@@ -72,7 +72,7 @@ target_compile_features(coffee_core INTERFACE cxx_std_20)
 # ============================================================
 file(GLOB_RECURSE _runtime_src src/runtime/*.cpp)
 file(GLOB_RECURSE _services_src src/services/*.cpp)
-file(GLOB_RECURSE _os_src src/os/*.cpp)
+file(GLOB_RECURSE _os_src src/core/modules/os/*.cpp)
 file(GLOB_RECURSE _c_adapter_src src/adapter/c/*.cpp)
 
 add_coffee_library(coffee_runtime SOURCES ${_runtime_src} LINK coffee_core)

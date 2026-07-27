@@ -21,19 +21,15 @@
         },
         {
             "name": "clang",
-            "displayName": "Clang (LLVM)",
-            "description": "Build com Clang/LLVM 19",
-            "generator": "MinGW Makefiles",
+            "displayName": "Clang (Linux)",
+            "description": "Build com Clang/LLVM (Linux)",
+            "generator": "Unix Makefiles",
             "binaryDir": "${sourceDir}/build/clang",
-            "environment": {
-                "PATH": "C:/Program Files/LLVM/bin;C:/msys64/ucrt64/bin;$penv{PATH}",
-                "CC": "C:/Program Files/LLVM/bin/clang.exe",
-                "CXX": "C:/Program Files/LLVM/bin/clang++.exe"
-            },
             "cacheVariables": {
-                "CMAKE_CXX_COMPILER": "C:/Program Files/LLVM/bin/clang++.exe",
-                "CMAKE_C_COMPILER": "C:/Program Files/LLVM/bin/clang.exe",
+                "CMAKE_CXX_COMPILER": "/usr/bin/clang++",
+                "CMAKE_C_COMPILER": "/usr/bin/clang",
                 "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
                 "COFFEE_BUILD_TESTS": "OFF"
             }
         },
